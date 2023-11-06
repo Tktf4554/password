@@ -1,0 +1,245 @@
+/* รหัส CSS สำหรับการแสดงผลในทุกรูปแบบ */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background: #f9d082;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    height: auto;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+  
+    position: fixed;/*navลอยตาม*/
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    
+    
+    
+  
+   
+}
+
+}
+.nav-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-toggle:hover {
+    transition: .300ms;
+    font-size: 40px;
+    color: #ff0000;
+}
+
+.logo {
+    margin: 40px 0 40px 0;
+    border: 1px solid red;
+}
+
+ul {
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0;
+    display: none;
+}
+
+ul li {
+    list-style-type: none;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 20px;
+    text-align: center;
+    border-bottom-style: solid;
+    border-bottom-color: #ccc;
+    border-bottom-width: 1px;
+    padding: 5px 50px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+ul li.first-child {
+    margin-top: 0;
+}
+
+ul li:hover {
+    opacity: 0.5;
+}
+
+.active {
+    display: flex;
+}
+
+.product-items {
+    cursor: pointer;
+    transition: 0.3s;
+    padding-top: 50%;
+    
+  
+}
+
+.product-items:hover {
+    transform: scale(1.03);
+}
+
+.product-img {
+    width: 100px;
+    height: 17vw;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* สีดำที่มีความทึบเพื่อทำเป็นพื้นหลัง */
+    z-index: 999; /* แสดงกว่าส่วนอื่น */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-pag {
+    max-width: 90%;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-content {
+    display: flex;
+    align-items: center;
+}
+
+.modaldesc-img {
+    min-width: 40%;
+    max-width: 80%; /* ปรับขนาดของรูปภาพให้ไม่ใหญ่เกินไป */
+    max-height: 80vh; /* กำหนดความสูงสูงสุดของรูปภาพ */
+    object-fit: contain; /* ปรับขนาดรูปภาพให้เต็มขอบและไม่ตัดทิ้ง */
+    border-radius: 10px;
+}
+
+.btn-control {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn, .btn-buy {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2vw;
+    transition: 0.3s;
+    color: #fff;
+}
+
+.btn {
+    background: linear-gradient(125deg, #ff1500, #b62d00);
+}
+
+.btn-buy {
+    background: linear-gradient(125deg, #00f3a2, #00c8ff);
+    margin-left: 10px;
+}
+
+/* รหัส CSS สำหรับการแสดงผลในรูปแบบมือถือ (หน้าจอน้อยกว่า 800px) */
+@media (max-width: 800px) {
+    .product {
+        display: flex;
+        flex-direction: column;
+    }
+}
+/* รหัส CSS สำหรับการแสดงผลในคอมพิวเตอร์ */
+@media (min-width: 801px) {
+    /* เพิ่มคุณสมบัติหรือการปรับแต่งที่คุณต้องการในคอมพิวเตอร์ที่มีความกว้างมากกว่า 800px ที่นี่ */
+    .product {
+        min-width: 10%;
+        height: 10%;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, 3fr);
+        grid-gap: 20px;
+        position: absolute;
+        left: 10px;
+    }
+}
+
+/* รหัส CSS สำหรับการแสดงผลในอุปกรณ์มือถือ (หน้าจอน้อยกว่าหรือเท่ากับ 800px) */
+@media (max-width: 800px) {
+    /* เพิ่มคุณสมบัติหรือการปรับแต่งที่คุณต้องการในอุปกรณ์มือถือที่มีความกว้างเท่าหรือน้อยกว่า 800px ที่นี่ */
+    .product {
+        display: flex;
+        flex-direction: column;
+      
+      
+    }
+    .product-items{
+      width: 90%;
+      padding-top: 50%;
+      padding-left: 10px;
+      
+      
+      
+      
+      
+      
+      
+      
+    }
+    .product-items img {
+        width: 100%;
+        height: auto;
+
+      
+    }
+}
+/*navbarในคอม*/
+@media screen and (min-width: 800px)
+{
+  nav {
+    height: 80px;
+    flex-direction: row;
+  } 
+  .logo{
+    padding-left: 50px;
+    margin:0;
+    width: 20%;
+  }
+  ul{
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    flex-direction: row;
+  }
+  ul li{
+    display: inline-block;
+    margin:0 70px 0 0;
+    text-align:left;
+    border-bottom-style: none;
+    padding:0;
+  }
+  .nav-toggle{
+    display: none;
+  }
+      }
